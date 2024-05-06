@@ -7,7 +7,7 @@ export default function CartPage() {
   const { state, remove, clear, quantityChange, purchase } = useCart();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between bg-gray-100 p-24">
+    <main className="flex min-h-[calc(100vh-3.5rem)] flex-col items-center justify-between bg-gray-100 p-24">
       <section className="w-full max-w-4xl">
         <h1 className="text-3xl font-bold">Carrinho</h1>
         {state.items.length > 0 ? (
