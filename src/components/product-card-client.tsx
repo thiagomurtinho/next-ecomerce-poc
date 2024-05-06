@@ -4,6 +4,7 @@ import { useCart } from '@/data/stores/cart';
 import { useProduct } from '@/gateway/product';
 import { Product } from '@/gateway/product/types';
 import { formatCurrency } from '@/lib/format-currency';
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 interface ProductCardClientProps extends Product {
@@ -36,7 +37,13 @@ export default function ProductCardClient(initialDataProduct: ProductCardClientP
 
   return (
     <div className="max-w-md overflow-hidden rounded-lg bg-white shadow-xl transition-shadow duration-300 hover:shadow-2xl">
-      <img className="h-60 w-full object-cover" src={product.thumbnail} alt={product.title} />
+      <Image
+        className="h-60 w-full object-cover"
+        src={product.thumbnail}
+        alt={product.title}
+        width={300}
+        height={200}
+      />
       <div className="px-6 py-4">
         <h3 className="mb-2 text-xl font-bold">{product.title}</h3>
         <p className="mb-4 text-base text-gray-700">{product.description}</p>
